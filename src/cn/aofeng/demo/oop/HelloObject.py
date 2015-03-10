@@ -1,6 +1,7 @@
 # coding:utf8
 
 class HelloObject:
+    ''' 面向对象基础：类、对象、方法 '''
 
     def __init__(self):
         ''' 在对类的实例初始化时会调用__init__方法 ,等现于Java类的构造方法'''
