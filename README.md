@@ -29,3 +29,4 @@
 
 ##面向对象
 * [HelloObject.py](src/cn/aofeng/demo/oop/HelloObject.py)
+* [ClassAndObjectVariables.py](src/cn/aofeng/demo/oop/ClassAndObjectVariables.py)
