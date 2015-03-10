@@ -33,3 +33,6 @@ print people.get("address")
 # 删除一个Key及其对应的Value
 del people["age"]
 print people.get("age")
+
+# 打印方法帮助信息
+help(dict)

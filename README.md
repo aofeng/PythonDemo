@@ -23,3 +23,6 @@
 
 ###字典（Dictionary）
 * [Dictionary.py](src/cn/aofeng/demo/datastructure/Dictionary.py)
+
+###序列（Sequence）
+* [Sequence.py](src/cn/aofeng/demo/datastructure/Sequence.py)
