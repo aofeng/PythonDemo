@@ -1,8 +1,8 @@
-#Python Demo
+#学习Python的练习代码片段
 ##流程控制
 ### if else
 * [Guess.py](src/cn/aofeng/demo/controlflow/Guess.py)
-* [IfStatement.py](src/cn/aofeng/demo/controlflow/IfStatement.py)
+*  [IfStatement.py](src/cn/aofeng/demo/controlflow/IfStatement.py)
 
 ###while
 * [WhileStatement.py](src/cn/aofeng/demo/controlflow/WhileStatement.py)
@@ -39,6 +39,8 @@
 ##操作系统相关
 * [DirAndFileAccess.py.py](src/cn/aofeng/demo/os/DirAndFileAccess.py)
 
+##HTTP相关
+* [UrllibDemo.py](src/cn/aofeng/demo/http/UrllibDemo.py)
 
 # 注意点
 * `方法与变量不能使用相同的名称`，否则执行时会报错：`TypeError: 'str' object is not callable`。
