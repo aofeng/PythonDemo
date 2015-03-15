@@ -42,6 +42,7 @@
 ##HTTP相关
 * [UrllibDemo.py](src/cn/aofeng/demo/http/UrllibDemo.py)
 * [SGMLParserDemo.py](src/cn/aofeng/demo/http/SGMLParserDemo.py)
+* [BaiduSingerInfo.py](src/cn/aofeng/demo/http/BaiduSingerInfo.py)
 
 # 注意点
 * `方法与变量不能使用相同的名称`，否则执行时会报错：`TypeError: 'str' object is not callable`。
