@@ -1,0 +1,175 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<!--STATUS OK-->
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<link rel="dns-prefetch" href="//ns0.bdstatic.com">
+<link rel="dns-prefetch" href="//ns1.bdstatic.com">
+<title>百度新闻搜索全球最大的中文新闻平台</title>
+<meta name="description" content="百度新闻是包含海量资讯的新闻服务平台，真实反映每时每刻的新闻热点。您可以搜索新闻事件、热点话题、人物动态、产品资讯等，快速了解它们的最新进展。" >
+<script type="text/javascript" src="http://news.baidu.com/resource/js/usermonitor.js?v=1.1"></script>
+<script type="text/javascript" src="http://ns0.bdstatic.com/static/widget/common/base_js_include/base_js_include_07d218e7.js"></script>
+<link type="text/css" rel="stylesheet" href="http://ns1.bdstatic.com/static/widget/common/module_static_include/module_static_include_a4c4e951.css"/>
+</head>
+<body>
+    <!--favorite-->
+<div id="favoriteTips" style="display: none;"></div>
+    <!--events-->
+<style>.newsbd20150302 {
+    background:#a11f02 url(http://news.baidu.com/resource/baidunews20150302.jpg) top  center  no-repeat;
+    padding-top:200px;
+}
+#usrbar {
+    transition:height  .4s ease-out;
+}
+#focus-top .hotnews .hdline0 a,#focus-top .hotnews .hdline2 a,#focus-top .hotnews .hdline4 a {
+    color:#bc0f1a!important;
+}
+a#closeZTbg {
+    color:#e60012;
+    opacity:.8;
+    filter:alpha(opacity=80) \9;
+}
+a#closeZTbg:hover {
+    color:#ff0014;
+    text-decoration:none;
+}</style>
+<a id="closeZTbg" style="padding-left:20px;height:15px; line-height:15px;line-height:1.5\9;_line-height:15px;font-size:12px; position: absolute; right: 50%; margin-right: -558px; top:71px; cursor: pointer; z-index:99; background: url(http://news.baidu.com/resource/baidunews20150305close.png) no-repeat;">关闭</a>
+
+    <!--userbar-->
+    <div id="usrbar" alog-group="userbar" alog-alias="hunter-userbar-start"></div>
+<div id="headerwrapper">
+    <div id="header" alog-group="header" alog-alias="hunter-header-start">
+        <!--顶部搜索框-->
+        
+            
+<form action="http://news.baidu.com/ns" name="fbaidu" class="sbox">
+    <table class="sbox" alog-group="search-box">
+        <tr>
+            <td class="logo">
+                <div class="logo">
+                    <a href="http://news.baidu.com/view.html">
+                        <!--ie6下使用带有背景色的logo,其余浏览器使用透明背景的logo-->
+                        <!--[if !IE]><!--><img src="/resource/img/logo_news_276_88.png?date=20150104" alt="百度新闻" height="46px" width="137px"><!--<![endif]-->
+                        <!--[if gt IE 6]><img src="/resource/img/logo_news_276_88.png?date=20150104" alt="百度新闻" height="46px" width="137px"><![endif]-->
+                        <!--[if IE 6]><img src="/resource/img/logo_news_276_88_for_ie6.png" alt="百度新闻" height="46px" width="137px"><![endif]-->
+                    </a>
+                </div>
+                <div class="date"><!--datebegin--><!--dateend--></div>
+            </td>
+            <td class="search">
+                <div class="tab"><span class="cur">新闻</span><a href="http://www.baidu.com/" title='web' mon="col=502&pn=0" onclick="queryTab(this);">网页</a><a href="http://tieba.baidu.com/" title="tieba" mon="col=502&pn=1" onclick="queryTab(this);">贴吧</a><a href="http://zhidao.baidu.com/" title="zhidao" mon="col=502&pn=2" onclick="queryTab(this);">知道</a><a href="http://music.baidu.com/" title="music" mon="col=502&pn=3" onclick="queryTab(this);">音乐</a><a href="http://image.baidu.com/" title="image" mon="col=502&pn=4" onclick="queryTab(this);">图片</a><a href="http://v.baidu.com/" title="video" mon="col=502&pn=5" onclick="queryTab(this);">视频</a><a href="http://map.baidu.com/" title="map" mon="col=502&pn=6" onclick="queryTab(this);">地图</a><a href="http://baike.baidu.com/" title="baike" mon="col=502&pn=7" onclick="queryTab(this);">百科</a><a href="http://wenku.baidu.com/" title="wenku"  mon="col=502&pn=8" onclick="queryTab(this);">文库</a></div>
+                <table>
+                    <tr>
+                        <td class="box"><div id="sugarea"><span class="s_ipt_wr" id="s_ipt_wr"><input class="word" id="ww" name="word" size="42"  maxlength="100" tabindex="1"></span><span class="s_btn_wr"><input class="btn" type="submit" value="百度一下" onmousedown="this.className='btn s_btn_h'" onmouseout="this.className='btn'"></span></div></td>
+                        <td class="help"><a href="http://www.baidu.com/search/news_help.html">帮助</a><span class="sep">|</span><a href="http://news.baidu.com/advanced_news.html">高级搜索</a><span class="sep">|</span><a href="http://news.baidu.com/pianhao.html">设置</a></td>
+                    </tr>
+                </table>
+                <!--ecombegin--><!--ecomend-->
+                <p class="search-radios">
+                    <input type="radio" name="tn" value="news" checked="checked" id="news" style="display: none;">
+                    <label for="news" class="checked">新闻全文</label>
+                    <input type="radio" name="tn" value="newstitle" id="newstitle" style="display: none;">
+                    <label for="newstitle" class="not-checked">新闻标题</label>
+                </p>
+                <input type="hidden" name="from" value="news">
+                <input type="hidden" name="cl" value="2">
+
+                <input type="hidden" name="rn" value="20">
+                <input type="hidden" name="ct" value="1">
+            </td></tr>
+    </table>
+</form>
+
+        <!--默认首页导航-->
+
+<div id="menu" alog-group="home-menu">
+    <div id="channel-shanghai" class="clearfix"  style="display:none" >
+        <div class="menu-list" style="width:947px;">
+            <ul>
+                <li  class="current"><a href="http://news.baidu.com/view.html">首页</a></li>
+                <li><a href="http://baijia.baidu.com/" id="nav-hot-link" target="_blank">百家</a></li>
+                <li class=" icon-new-wrapper"><a href="http://jian.news.baidu.com/" target="_blank"><div class="icon-new"></div>推荐</a></li>
+                <li ><a href="http://sh.news.baidu.com/">上海</a></li>
+                <li ><a href="http://internet.baidu.com/">互联网</a></li>
+                <li ><a href="http://yule.baidu.com/">娱乐</a></li>
+                <li ><a href="http://mil.news.baidu.com/">军事</a></li>
+                <li ><a href="http://finance.baidu.com/">财经</a></li>
+                <li ><a href="http://sports.baidu.com/">体育</a></li>
+                <li ><a href="http://guonei.news.baidu.com/">国内</a></li>
+                <li ><a href="http://guoji.news.baidu.com/">国际</a></li>
+                <li ><a href="http://shehui.news.baidu.com/">社会</a></li>
+                <li ><a href="http://tech.baidu.com/">科技</a></li>
+                <li ><a href="http://lady.baidu.com/">女人</a></li>
+                <li ><a href="http://auto.baidu.com/">汽车</a></li>
+                <li ><a href="http://fangchan.news.baidu.com/">房产</a></li>
+                <li ><a href="http://youxi.news.baidu.com/">游戏</a></li>
+                <li ><a href="http://jiaoyu.news.baidu.com/">教育</a></li>
+                <li ><a href="http://shipin.news.baidu.com/">视频</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="channel-all" class="clearfix" >
+        <div class="menu-list">
+            <ul>
+                <li  class="current"><a href="http://news.baidu.com/view.html">首页</a></li>
+                <li><a href="http://baijia.baidu.com/" id="nav-hot-link" target="_blank">百家</a></li>
+                <li class=" icon-new-wrapper"><a href="http://jian.news.baidu.com/" target="_blank"><div class="icon-new"></div>个性推荐</a></li>
+                <li ><a href="http://internet.baidu.com/">互联网</a></li>
+                <li ><a href="http://yule.baidu.com/">娱乐</a></li>
+                <li ><a href="http://mil.news.baidu.com/">军事</a></li>
+                <li ><a href="http://finance.baidu.com/">财经</a></li>
+                <li ><a href="http://sports.baidu.com/">体育</a></li>
+                <li ><a href="http://guonei.news.baidu.com/">国内</a></li>
+                <li ><a href="http://guoji.news.baidu.com/">国际</a></li>
+                <li ><a href="http://shehui.news.baidu.com/">社会</a></li>
+                <li ><a href="http://tech.baidu.com/">科技</a></li>
+                <li ><a href="http://lady.baidu.com/">女人</a></li>
+                <li ><a href="http://auto.baidu.com/">汽车</a></li>
+                <li ><a href="http://fangchan.news.baidu.com/">房产</a></li>
+                <li ><a href="http://youxi.news.baidu.com/">游戏</a></li>
+                <li ><a href="http://jiaoyu.news.baidu.com/">教育</a></li>
+                <li ><a href="http://shipin.news.baidu.com/">视频</a></li>
+            </ul>
+        </div>
+        <div class="menu-ext">
+            <ul>
+                <li><a href="http://news.hao123.com/?src=baidunews_1016" mon="toptab=newssite&resouci=1">名站</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    </div>
+    
+
+<div id="channel-media">
+    <div class="media-row">
+        <ul class="clearfix">
+                    <li><a href="http://huaxi.media.baidu.com" target="_blank">华西都市报</a></li>
+                    <li><a href="http://pengpai.media.baidu.com" target="_blank">澎湃</a></li>
+                    <li><a href="http://nandu.media.baidu.com" target="_blank">南方都市报</a></li>
+                    <li><a href="http://cankaoxiaoxi.media.baidu.com" target="_blank">参考消息</a></li>
+                    <li><a href="http://infzm.media.baidu.com" target="_blank">南方周末</a></li>
+                    <li><a href="http://caixin.media.baidu.com" target="_blank">财新网</a></li>
+                    <li><a href="http://ynet.media.baidu.com" target="_blank">北京青年报</a></li>
+                    <li><a href="http://21cbh.media.baidu.com/" target="_blank">21世纪经济报道</a></li>
+                    <li><a href="http://yicai.media.baidu.com/" target="_blank">第一财经日报</a></li>
+                    <li><a href="http://xxcb.media.baidu.com/" target="_blank">潇湘晨报</a></li>
+                </ul>
+        <div class="media-more">
+            <a href="javascript:;">
+                更多<i class="icon-media-more unfold"></i>
+            </a>
+            <a href="javascript:;" style="display:none">
+                收起<i class="icon-media-more fold"></i>
+            </a>
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
