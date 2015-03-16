@@ -1,8 +1,8 @@
 #coding:utf8
 # SGMLParser是Python标准库加解析HTML的工具类。
 # SGMLParser将HTML分解成8种不同类型的数据，然后调用相应的方法：
-# 1）开始标签（Start Tag）。调用start_tagname方法，并传入该标签所有属性列表。如果没有对应的方法，将调用unknown_tagname方法，将传入该标签的名称和属性列表。
-# 2）结束标签（End Tag）。调用end_tagname方法。如果没有对应的方法，将调用unknown_tagname方法并传入名称。
+# 1）开始标签（Start Tag）。调用start_tagname方法，并传入该标签所有属性列表。如果没有对应的方法，将调用unknown_starttag方法，将传入该标签的名称和属性列表。
+# 2）结束标签（End Tag）。调用end_tagname方法。如果没有对应的方法，将调用unknown_endtag方法并传入名称。
 # 3）字符引用（Character Reference）。调用handle_charref方法并传入数据。
 # 4）实体引用（Entiry Reference）。调用handler_entityref方法并传入数据。
 # 5）注释 （Comment）。调用handler_comment方法并传入数据。
