@@ -1,4 +1,5 @@
-#学习Python的练习代码片段
+#Python Demo
+用于存放博客中文章的Python示例代码和学习过程中实践编写的Python代码片段。
 ##流程控制
 ### if else
 * [Guess.py](src/cn/aofeng/demo/controlflow/Guess.py)
@@ -43,6 +44,10 @@
 * [UrllibDemo.py](src/cn/aofeng/demo/http/UrllibDemo.py)
 * [SGMLParserDemo.py](src/cn/aofeng/demo/http/SGMLParserDemo.py)
 * [BaiduSingerInfo.py](src/cn/aofeng/demo/http/BaiduSingerInfo.py)
+
+##多线程
+* [ThreadFunction.py](src/cn/aofeng/demo/thread/ThreadFunction.py)
+* [ThreadClass.py](src/cn/aofeng/demo/thread/ThreadClass.py)
 
 # 注意点
 * `方法与变量不能使用相同的名称`，否则执行时会报错：`TypeError: 'str' object is not callable`。
