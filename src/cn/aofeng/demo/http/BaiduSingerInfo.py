@@ -92,5 +92,5 @@ if __name__ == "__main__":
     singerPageUrl = "http://music.baidu.com/artist"
     collector = SingerInfoCollector()
     data = collector.analyze(singerPageUrl)
-    for name, link in data:
+    for name, link in data.items():
             print name, link
