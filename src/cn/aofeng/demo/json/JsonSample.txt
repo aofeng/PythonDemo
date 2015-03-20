@@ -1,0 +1,33 @@
+{
+    "id": "550e8400-e29b-41d4-a716-446655440000",
+    "client": {
+        "si": "20140410230539559678",
+        "ve": "3.3.1",
+        "os": "android",
+        "fr": "API Level-16 - samsung-4.1.2",
+        "ex": {
+            "imei": "869xxxxxxxx0255",
+            "imsi": "460xxxxxxxx4428",
+            "model": "ZTE U817",
+            "mf":"ZTE",
+            "net": "wifi",
+            "mobi": "",
+            "resX": "791",
+            "resY": "480",
+            "mac": "90:xx:xx:xx:xx:30",
+            "orient": "L"
+        }
+    },
+    "game": {
+        "gameId": 88888,
+        "channelId": "WM_1103",
+        "apkChannelId": "WM",
+        "flChannelId": "WM_JY3"
+    },
+    "data": {
+        "loginFrom": 1,
+        "password": "1|LpjEh\/TkUmDTpWxD0YMf48ur4PJQBCHa1fdWiP\/dA2psEF4VLXzZ6ofZML5N\/020w+xx6zuvHheZqxZYKdRY5A==",
+        "encrypt": 1,
+        "name": "298xxxxxx"
+    }
+}
