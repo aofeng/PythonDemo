@@ -55,6 +55,10 @@
 ##JSON
 * [使用Python标准库操作JSON](src/cn/aofeng/demo/json/StandardLibrary.py)
 
+##数据库
+###MySQL
+* [使用Connector/Python进行查询](src/cn/aofeng/demo/mysql/Query.py)
+
 # 注意点
 * `方法与变量不能使用相同的名称`，否则执行时会报错：`TypeError: 'str' object is not callable`。
 * 在子类的__init__方法执行时，并不会自动执行父类的__init__方法，需在子类的代码中显式调用，这与Java不同。
