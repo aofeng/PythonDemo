@@ -3,10 +3,9 @@ import sys
 import os
 import re
 
-# monitor日志存储目录。
-# monitor日志的文件格式名：monitor.log.yyyy-mm-dd-hh，如：monitor.log.2015-03-19-10
-# monitor日志每行一个方法的访问汇总：
-# log_time=2015-03-21 00:08:00`service=acconfig.getSecurityKey`req=2006`time=585`failedReq=0`failedTime=0`timePerReq=0.0
+'''monitor日志文件按小时切分，1天生成24个文件，文件名格式：monitor.log.yyyy-mm-dd-hh，如：monitor.log.2015-03-19-10
+monitor日志每行是一个方法的访问汇总数据，每分钟输出一批数据：
+log_time=2015-03-21 00:08:00`service=acconfig.getSecurityKey`req=2006`time=585`failedReq=0`failedTime=0`timePerReq=0.0'''
 
 def analyzeLine(line):
     ''' 对monitor.log文件中一行数据进行服务的请求数据分析 '''
