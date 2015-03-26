@@ -1,6 +1,7 @@
 #coding:utf8
 import sys
 import os
+import re
 
 # monitor日志存储目录。
 # monitor日志的文件格式名：monitor.log.yyyy-mm-dd-hh，如：monitor.log.2015-03-19-10
@@ -12,20 +13,24 @@ def analyzeLine(line):
     
     if line == "":
         return "", {}
-    service = ""
-    serviceData = {"reqTotalNum":0, "reqTotalTime":0, "reqFailNum":0}
-    for kvStr in line.split("`"):
-        kvList = kvStr.split("=")
-        if kvList[0] == "service":
-            service = kvList[1]
-        elif kvList[0] == "req":
-            serviceData["reqTotalNum"] += int(kvList[1])
-        elif kvList[0] == "time":
-            serviceData["reqTotalTime"] += int(kvList[1])
-        elif kvList[0] == "failedReq":
-            serviceData["reqFailNum"] += int(kvList[1])
+    kvList = re.split("`|=", line)
+    service = kvList[3]
+    serviceData = {"reqTotalNum":int(kvList[5]), "reqTotalTime":int(kvList[7]), "reqFailNum":int(kvList[9])}
     
     return service, serviceData
+
+def addDictData(first, second):
+    ''' 对两个Dictionary数据进行累加：将second中的数据累加到first中 '''
+    
+    if None == first or None == second:
+        return
+    for service, value in second.items():
+        if None == first.get(service):
+            first[service] = value
+        else:
+            first[service]["reqTotalNum"] += value["reqTotalNum"]
+            first[service]["reqTotalTime"] += value["reqTotalTime"]
+            first[service]["reqFailNum"] += value["reqFailNum"]
 
 def analyzeFile(data, filePath):
     ''' 对单个monitor.log文件进行服务的请求数据分析 '''
@@ -43,12 +48,7 @@ def analyzeFile(data, filePath):
                 continue
             service, serviceData = analyzeLine(line)
             if service != "":
-                if None == data.get(service):
-                    data[service] = serviceData
-                else:
-                    data[service]["reqTotalNum"] += serviceData["reqTotalNum"]
-                    data[service]["reqTotalTime"] += serviceData["reqTotalTime"]
-                    data[service]["reqFailNum"] += serviceData["reqFailNum"]
+                addDictData(data, {service:serviceData})
     finally:
         fo.close()
     
