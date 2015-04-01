@@ -57,7 +57,7 @@
 
 ##数据库
 ###MySQL
-* [使用Connector/Python进行查询](src/cn/aofeng/demo/mysql/Query.py)
+* [使用Connector/Python操作MySQL](src/cn/aofeng/demo/mysql)
 
 ##编程实践
 ###日志分析
