@@ -59,6 +59,10 @@
 ###MySQL
 * [使用Connector/Python操作MySQL](src/cn/aofeng/demo/mysql)
 
+##NoSQL
+###Memcached
+* [使用python-memcache操作Memcached](src/cn/aofeng/demo/memcached)
+
 ##编程实践
 ###日志分析
 * [MonitorLogAnalyze.py](src/cn/aofeng/prod/log/MonitorLogAnalyze.py)
