@@ -2,6 +2,7 @@
 import sys
 import os
 import re
+import datetime
 
 '''monitor日志文件按小时切分，1天生成24个文件，文件名格式：monitor.log.yyyy-mm-dd-hh，如：monitor.log.2015-03-19-10
 monitor日志每行是一个方法的访问汇总数据，每分钟输出一批数据：
@@ -59,7 +60,7 @@ def analyzeFiles(fileDir, date):
     data = {}
     for hour in range(0,24):
         monitorLogFilePath = "".join( (fileDir, "monitor.log.", date, "-", str(hour).zfill(2)) )
-        print "开始分析文件：%s" % (monitorLogFilePath)
+        print "[%s] 开始分析文件：%s" % (datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), monitorLogFilePath)
         analyzeFile(data, monitorLogFilePath)
     print "%30s, %10s, %10s, %10s" % ("service", "reqTotalNum","reqTotalTime", "reqFailNum")
     for service,value in data.items():
