@@ -65,7 +65,12 @@
 
 ##编程实践
 ###日志分析
+* [AccessLogExecTimeAnalyze.py](src/cn/aofeng/prod/log/AccessLogExecTimeAnalyze.py)
+* [AccessLogLoginPvAnalyze.py](src/cn/aofeng/prod/log/AccessLogLoginPvAnalyze.py)
 * [MonitorLogAnalyze.py](src/cn/aofeng/prod/log/MonitorLogAnalyze.py)
+
+###模板
+* [CreateNginxHost.py)](src/cn/aofeng/prod/template/CreateNginxHost.py)
 
 # 注意点
 * `方法与变量不能使用相同的名称`，否则执行时会报错：`TypeError: 'str' object is not callable`。
