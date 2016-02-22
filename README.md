@@ -15,6 +15,10 @@
 * [Function.py](src/cn/aofeng/demo/function/Function.py)
 * [DocStrings.py](src/cn/aofeng/demo/function/DocStrings.py)
 
+##数据类型
+###字符串
+* (StringDemo.py)[src/cn/aofeng/demo/datatye/StringDemo.py]
+
 ##数据结构
 ###列表（List）
 * [List.py](src/cn/aofeng/demo/datastructure/List.py)
