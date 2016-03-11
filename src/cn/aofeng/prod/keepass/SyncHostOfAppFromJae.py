@@ -13,7 +13,7 @@ keepassDbFilePath = "Test.kdbx"
 keepassDbFilePasswd = "aofeng"
 
 # SSH的账号和密码
-sshUsername = "nieyong"
+sshUsername = "aofeng"
 sshPasswd = ""
 
 # 获取用户拥有权限的应用列表地址
@@ -94,7 +94,7 @@ def showHostOfApp(appId, hostList):
 
 def addEntryToKeePass(appId, appName, hostObj, entryUrl, entryTitlePrefix=""):
     '''向KeePass中添加记录'''
-    print("add entry to host %s" % hostObj[0])
+    print("add host  entry %s" % hostObj[0])
     addCmdTemplate = 'KPScript -c:AddEntry %s -pw:"%s" -Title:"%s%s" -UserName:"%s@reader@%s@%d" -Password:"%s" -URL:"%s" -GroupPath:PROD/%s_%s'
     param = (keepassDbFilePath, 
              keepassDbFilePasswd, 
@@ -113,7 +113,7 @@ def addEntryToKeePass(appId, appName, hostObj, entryUrl, entryTitlePrefix=""):
 def delAllEntriesOfGroup(groupPath):
     '''从KeePass中删除指定Group下的所有记录'''
     print("delete all entries from group %s"%groupPath)
-    delCmdTemplate = 'KPScript -c:DeleteAllEntries %s -pw:"%s" -refx-GroupPath:%s'
+    delCmdTemplate = 'KPScript -c:DeleteEntry %s -pw:"%s" -refx-GroupPath:%s'
     param = (keepassDbFilePath, 
              keepassDbFilePasswd, 
              groupPath)
@@ -131,7 +131,7 @@ def addEntryOfAppToKeePass(appId, appList):
     # 增加新的主机列表
     for host in hostList:
         addEntryToKeePass(appId, appName, host, "cmd://kitty -load SSHGateWay -l {username} -pw {password}")   # 增加一条使用Kitty打开SSH的记录
-        addEntryToKeePass(appId, appName, host, "ssh://fortressgate.uc.cn:2000", "XShell-")   # 增加一条使用XShell打开SSH的记录
+        addEntryToKeePass(appId, appName, host, "ssh://fortressgate.aofeng:3000", "XShell-")   # 增加一条使用XShell打开SSH的记录
 
 if(len(uaeWebSession)==0):
     uaeWebSession = input("Please Enter uae_web_session:")
