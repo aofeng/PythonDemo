@@ -78,7 +78,7 @@
 * [ACServerAppAnalyze.py](src/cn/aofeng/prod/log/ACServerAppAnalyze.py)
 
 ###模板
-* [CreateNginxHost.py)](src/cn/aofeng/prod/template/CreateNginxHost.py)
+* [CreateNginxHostConfig.py)](src/cn/aofeng/prod/template/CreateNginxHostConfig.py)
 
 # 注意点
 * `方法与变量不能使用相同的名称`，否则执行时会报错：`TypeError: 'str' object is not callable`。
