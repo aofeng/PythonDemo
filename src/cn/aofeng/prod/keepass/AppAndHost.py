@@ -16,7 +16,7 @@ appListUrl = ""
 hostListUrl = ""
 
 # 输出类型（Console，CSV）
-outType="Console"
+outType=""
 outFilePath=""
 
 class Common:
@@ -113,15 +113,15 @@ if __name__ == '__main__':
     
     # 参数判断
     if (len(uaeWebSession) == 0):
-        uaeWebSession = input("Please Enter uae_web_session:")
+        uaeWebSession = raw_input("Please Enter uae_web_session:")
     if (len(appListUrl) == 0):
-        appListUrl = input("Please Enter appListUrl:")
+        appListUrl = raw_input("Please Enter appListUrl:")
     if (len(hostListUrl) == 0):
-        hostListUrl = input("Please Enter hostListUrl:")
+        hostListUrl = raw_input("Please Enter hostListUrl:")
     if (len(outType) == 0):
-        outType = input("Please Enter outType(Console, CSV):")
+        outType = raw_input("Please Enter outType(Console, CSV):")
     if ("CSV" == outType and len(outFilePath) == 0):
-        outFilePath = input("Please Enter outFilePath:")
+        outFilePath = raw_input("Please Enter outFilePath:")
         
     app = App()
     host = Host()
