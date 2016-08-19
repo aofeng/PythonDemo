@@ -7,34 +7,40 @@ from prettytable import PrettyTable
 from cn.aofeng.prod.keepass.Printer import ConsolePrettyTable, FileCsv
 
 # 账号登陆JAE后生成的Cookie项"_uae_web_session"
-uaeWebSession = ""
+__uaeWebSession = ""
 
 # 获取用户拥有权限的应用列表地址
-appListUrl = ""
+__appListUrl = ""
 
 # 获取指定应用的主机列表地址
-hostListUrl = ""
+__hostListUrl = ""
 
 # 输出类型（Console，CSV）
-outType=""
-outFilePath=""
+__outType="Console"
+__outFilePath=""
 
 class Common:
     ''' 公用方法 '''
     
-    def get(self, url, uaeWebSession):
-        cookies = {"_uae_web_session":uaeWebSession}
+    def __init__(self, uaeWebSession):
+        self.uaeWebSession = uaeWebSession
+    
+    def get(self, url):
+        cookies = {"_uae_web_session":self.uaeWebSession}
         response = requests.get(url, cookies=cookies)
         return response
 
 class App:
     ''' 获取应用信息 '''
     
+    def __init__(self, uaeWebSession):
+        self.uaeWebSession = uaeWebSession
+    
     def getAppList(self, reqUrl, onlyProd=False):
         '''从JAE获取应用列表'''
         result = []
-        common = Common()
-        response = common.get(reqUrl, uaeWebSession)
+        common = Common(self.uaeWebSession)
+        response = common.get(reqUrl)
         jsonObj = json.loads(response.content.decode())
         for appGroup in jsonObj:
             appList = appGroup["apps"]
@@ -70,11 +76,14 @@ class App:
 class Host:
     ''' 获取主机信息 '''
     
+    def __init__(self, uaeWebSession):
+        self.uaeWebSession = uaeWebSession
+    
     def getHostListOfApp(self, appId, reqUrl, onlyProd=False):
         '''从JAE获取指定应用的主机列表'''
         getHostUrl = reqUrl%appId
-        common = Common()
-        response = common.get(getHostUrl, uaeWebSession)
+        common = Common(self.uaeWebSession)
+        response = common.get(getHostUrl)
         jsonObj = json.loads(response.content.decode())
         hostList = jsonObj.get("instances")
         if not hostList:
@@ -112,31 +121,31 @@ if __name__ == '__main__':
     sys.path.append(os.getcwd())
     
     # 参数判断
-    if (len(uaeWebSession) == 0):
-        uaeWebSession = raw_input("Please Enter uae_web_session:")
-    if (len(appListUrl) == 0):
-        appListUrl = raw_input("Please Enter appListUrl:")
-    if (len(hostListUrl) == 0):
-        hostListUrl = raw_input("Please Enter hostListUrl:")
-    if (len(outType) == 0):
-        outType = raw_input("Please Enter outType(Console, CSV):")
-    if ("CSV" == outType and len(outFilePath) == 0):
-        outFilePath = raw_input("Please Enter outFilePath:")
+    if (len(__uaeWebSession) == 0):
+        __uaeWebSession = raw_input("Please Enter uae_web_session:")
+    if (len(__appListUrl) == 0):
+        __appListUrl = raw_input("Please Enter appListUrl:")
+    if (len(__hostListUrl) == 0):
+        __hostListUrl = raw_input("Please Enter hostListUrl:")
+    if (len(__outType) == 0):
+        __outType = raw_input("Please Enter outType(Console, CSV):")
+    if ("CSV" == __outType and len(__outFilePath) == 0):
+        __outFilePath = raw_input("Please Enter outFilePath:")
         
-    app = App()
-    host = Host()
-    appList = app.getAppList(appListUrl, True)
+    app = App(__uaeWebSession)
+    host = Host(__uaeWebSession)
+    appList = app.getAppList(__appListUrl, True)
     app.showAppList(appList, True)
     appId = raw_input("Please Enter 'App Id' or 'ALL':")
-    outParam = {"outType":outType, "outFilePath":outFilePath}
+    outParam = {"outType":__outType, "outFilePath":__outFilePath}
     if ("ALL"==appId):
         # 所有应用
         for app in appList:
             appName = app["appName"]
-            hostList = host.getHostListOfApp(app["appId"], hostListUrl, True)
+            hostList = host.getHostListOfApp(app["appId"], __hostListUrl, True)
             host.printAppAndHostList(app["appId"], appName, hostList, outParam)
     else:
         # 单个应用
         appName = app.findAppName(appList, appId)
-        hostList = host.getHostListOfApp(appId, hostListUrl, True)
+        hostList = host.getHostListOfApp(appId, __hostListUrl, True)
         host.printAppAndHostList(appId, appName, hostList, outParam)
