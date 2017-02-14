@@ -89,6 +89,57 @@ DATABASES = {
     }
 }
 
+# Logging
+# https://docs.djangoproject.com/en/1.10/ref/settings/#logging
+# https://docs.djangoproject.com/en/1.10/topics/logging/
+
+LOGGING = {
+    'version':1,
+    'disable_existing_loggers': False,
+    'formatters':{
+        'verbose':{
+            'format':'%(levelname)s %(asctime)s %(module)s %(lineno)d %(process)d %(thread)d %(message)s',
+            'datefmt':"%Y-%m-%d %H:%M:%S"
+        },
+        'simple':{
+            'format':'%(message)s'
+        }
+    },
+    'handlers':{
+        'console':{
+            'class':'logging.StreamHandler',
+            'formatter':'verbose'
+        },
+        'file_statistics':{
+            'level':'INFO',
+            'class':'logging.handlers.TimedRotatingFileHandler',
+            'formatter':'simple',
+            'filename':'/home/nieyong/temp/logs/file_statistics.log',
+            'when':'D',
+            'backupCount':15
+        },
+        'file_sysinfo':{
+            'level':'INFO',
+            'class':'logging.handlers.TimedRotatingFileHandler',
+            'formatter':'verbose',
+            'filename':'/home/nieyong/temp/logs/file_sysinfo.log',
+            'when':'H',
+            'backupCount':24
+        }
+    },
+    'loggers':{
+        'django':{
+            'level':'INFO',
+            'handlers':['console', 'file_sysinfo']
+        },
+        'stats':{
+            'level':'INFO',
+            'handlers':['file_statistics']
+        }
+    }
+}
+
+
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
 
